@@ -84,8 +84,6 @@ protected:
 	string BookType;
 	string typeOfProduct;
 	string refoundPeriod;
-	//string ReaderNumber;
-	//string ReaderAddress;
 	int numberOfBooks;
 	int totalNumberOfBooks;
 public:
@@ -94,24 +92,18 @@ public:
 		string BookType,
 		string typeOfProduct,
 		string refoundPeriod,
-		//string ReaderNumber,
-		//string ReaderAddress,
 		int numberOfBooks,
 		int totalNumberOfBooks
 	);
 	void setProductName(string BookType) { this->BookType = BookType; };
 	void setTypeOfProduct(string typeOfProduct) { this->typeOfProduct = typeOfProduct; };
 	void setPaymentDay(string refoundPeriod) { this->refoundPeriod = refoundPeriod; };
-	//void setVendorINN(string ReaderNumber) { this->ReaderNumber = ReaderNumber; };
-	//void setCompanyAddress(string ReaderAddress) { this->ReaderAddress = ReaderAddress; };
 	void setNumberOfProduct(int numberOfBooks) { this->numberOfBooks = numberOfBooks; };
 	void setSumOfProduct(int totalNumberOfBooks) { this->totalNumberOfBooks = totalNumberOfBooks; };
 
 	string  getBookName() { return this->BookType; };
 	string  getTypeOfBook() { return this->typeOfProduct; };
 	string  getRefoundPeriod() { return this->refoundPeriod; };
-	//string  getVendorINN() { return this->ReaderNumber; };
-	//string  getCompanyAddress() { return this->ReaderAddress; };
 	int		getNumberOfBooks() { return this->numberOfBooks; };
 	int		getTotalNumberOfBooks() { return this->totalNumberOfBooks; };
 	string	getDataProduct();
@@ -133,8 +125,6 @@ public:
 		string BookType,
 		string typeOfBook,
 		string refoundPeriod,
-		//string ReaderNumber,
-		//string ReaderAddress,
 		int numberOfBooks,
 		int totalNumberOfBooks,
 		string FIO,
@@ -157,8 +147,6 @@ private:
 	ListBook* reader = NULL;
 	ListBook* head = NULL;
 	ListBook* tail = NULL;
-	//string ReaderNumber = { "88005553535" };
-	//string ReaderAddress = { "622966, Калининградская область, город Кашира, пл. Балканская, 27" };
 	void swapAndDelClients();
 	void transform();
 	void show();

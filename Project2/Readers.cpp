@@ -48,8 +48,6 @@ DataProduct::DataProduct() {
 	this->BookType = { "None" };
 	this->typeOfProduct = { "None" };
 	this->refoundPeriod = { "None" };
-	//this->ReaderNumber = { "None" };
-	//this->ReaderAddress = { "None" };
 	this->numberOfBooks = 0;
 	this->totalNumberOfBooks = 0;
 
@@ -58,16 +56,12 @@ DataProduct::DataProduct(
 	string BookType,
 	string typeOfProduct,
 	string refoundPeriod,
-	//string ReaderNumber,
-	//string ReaderAddress,
 	int numberOfBooks,
 	int totalNumberOfBooks
 ) {
 	this->BookType = BookType;
 	this->typeOfProduct = typeOfProduct;
 	this->refoundPeriod = refoundPeriod;
-	//this->ReaderNumber = ReaderNumber;
-	//this->ReaderAddress = ReaderAddress;
 	this->numberOfBooks = numberOfBooks;
 	this->totalNumberOfBooks = totalNumberOfBooks;
 }
@@ -76,8 +70,6 @@ string DataProduct::getDataProduct()
 	return "Название книги: " + this->BookType
 		+ " Тип книги: " + this->typeOfProduct
 		+ " День врзврата: " + this->refoundPeriod
-		//+ " Номер билета: " + this->ReaderNumber
-		//+ " Адрес читателя: " + this->ReaderAddress
 		+ " Кол-во книг: " + to_string(this->numberOfBooks)
 		+ " Общее кол-во взятых книг: " + to_string(this->totalNumberOfBooks);
 }
@@ -99,8 +91,6 @@ ListBook::ListBook(
 	string BookType,
 	string typeOfProduct,
 	string refoundPeriod,
-	//string ReaderNumber,
-	//string ReaderAddress,
 	int numberOfBooks,
 	int totalNumberOfBooks,
 	string FIO,
@@ -113,13 +103,11 @@ ListBook::ListBook(
 		BookType,
 		typeOfProduct,
 		refoundPeriod,
-		//ReaderNumber,
-		//ReaderAddress,
 		numberOfBooks,
 		totalNumberOfBooks
 	);
 	if (temporaryReader) {
-		this->TemporaryReader::TemporaryReader(			//Юр лицо
+		this->TemporaryReader::TemporaryReader(
 			CurrentTerm,
 			NumberOfBooksTaken,
 			BookName
@@ -229,8 +217,6 @@ void ListOfReaders::addReaders()
 				newBookType,
 				newTypeOfBook,
 				newRefoundPeriod,
-				//ReaderNumber,
-				//ReaderAddress,
 				newNumberOfProduct,
 				newSumOfProduct,
 				newFIO,
@@ -250,8 +236,6 @@ void ListOfReaders::addReaders()
 				newBookType,
 				newTypeOfBook,
 				newRefoundPeriod,
-				/*ReaderNumber,
-				ReaderAddress,*/
 				newNumberOfProduct,
 				newSumOfProduct,
 				newFIO,
@@ -311,7 +295,7 @@ void ListOfReaders::addReaders()
 
 		if (tail == NULL && head == NULL)
 		{
-			tail = new ListBook(NULL,NULL,newtemporaryReader,newBookType,newtypeOfBook,newrefoundPeriod/*,ReaderNumber,ReaderAddress*/,newnumberOfBooks,newtotalNumberOfBooks,"None","None",newCurrentTerm,newNumberOfBooksTaken,newBookName);
+			tail = new ListBook(NULL,NULL,newtemporaryReader,newBookType,newtypeOfBook,newrefoundPeriod,newnumberOfBooks,newtotalNumberOfBooks,"None","None",newCurrentTerm,newNumberOfBooksTaken,newBookName);
 			reader = tail;
 			head = tail;
 
@@ -319,7 +303,7 @@ void ListOfReaders::addReaders()
 		else if (tail != NULL)
 		{
 			reader = tail;
-			reader->next = new ListBook(NULL,reader,newtemporaryReader,newBookType,newtypeOfBook,newrefoundPeriod/*,ReaderNumber,ReaderAddress*/,newnumberOfBooks,newtotalNumberOfBooks,"None","None",newCurrentTerm,newNumberOfBooksTaken,newBookName);
+			reader->next = new ListBook(NULL,reader,newtemporaryReader,newBookType,newtypeOfBook,newrefoundPeriod,newnumberOfBooks,newtotalNumberOfBooks,"None","None",newCurrentTerm,newNumberOfBooksTaken,newBookName);
 			reader = reader->next;
 			tail = reader;
 		}
@@ -1124,8 +1108,6 @@ void ListOfReaders::load()
 					newProductName,
 					newTypeOfProduct,
 					newPaymentDay,
-					/*this->ReaderNumber,
-					this->ReaderAddress,*/
 					newNumberOfProduct,
 					newSumOfProduct,
 					newFIO,
@@ -1147,8 +1129,6 @@ void ListOfReaders::load()
 					newProductName,
 					newTypeOfProduct,
 					newPaymentDay,
-					/*this->ReaderNumber,
-					this->ReaderAddress,*/
 					newNumberOfProduct,
 					newSumOfProduct,
 					newFIO,
@@ -1238,8 +1218,6 @@ void ListOfReaders::load()
 					newProductName,
 					newTypeOfProduct,
 					newPaymentDay,
-				/*	this->ReaderNumber,
-					this->ReaderAddress,*/
 					newNumberOfProduct,
 					newSumOfProduct,
 					newFIO,
@@ -1261,8 +1239,6 @@ void ListOfReaders::load()
 					newProductName,
 					newTypeOfProduct,
 					newPaymentDay,
-		/*			this->ReaderNumber,
-					this->ReaderAddress,*/
 					newNumberOfProduct,
 					newSumOfProduct,
 					newFIO,
